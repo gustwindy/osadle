@@ -1,6 +1,7 @@
 {
     "name": "osadle",
     "main": "src/index.ts",
+    "watch_dir": ["front", "src"],
     "compatibility_date": "2026-11-13",
     "observability": {
         "enabled": true
