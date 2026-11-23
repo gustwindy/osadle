@@ -1,0 +1,27 @@
+.archive-card {
+    width: 60vw;
+    padding-bottom: 15px;
+    user-select: none;
+
+    .game-info {
+        display: flex;
+        padding-bottom: 5px;
+        cursor: pointer;
+
+        .title {
+            font-family: "Kumosan" monospace;
+            font-size: 40px;
+            text-box-trim: trim-both;
+            text-box-edge: cap;
+        }
+        .attempts {
+            margin-left: auto;
+            width: 6.3em;
+            align-content: center;
+            padding-bottom: 10px;
+        }
+    }
+    .date {
+        opacity: 0.5;
+    }
+}

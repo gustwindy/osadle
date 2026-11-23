@@ -1,0 +1,18 @@
+@keyframes loading-fish-animation {
+    0% {
+        background-image: url("/images/fish/1.png");
+    }
+    33% {
+        background-image: url("/images/fish/2.png");
+    }
+    66% {
+        background-image: url("/images/fish/3.png");
+    }
+}
+
+.loading-fish {
+    animation: loading-fish-animation 0.4s infinite;
+    background-image: url("/images/fish/1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

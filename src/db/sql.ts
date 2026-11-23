@@ -112,6 +112,15 @@ export function InitDb(d1Db: D1Database) {
                     seeds,
                 });
             },
+            archive: async (): Promise<schema.History[]> => {
+                return await db
+                    .select()
+                    .from(schema.history)
+                    .orderBy(desc(schema.history.day))
+                    .limit(-1)
+                    .offset(1)
+                    .all();
+            },
         },
     };
     return sql;

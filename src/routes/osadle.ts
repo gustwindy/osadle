@@ -5,9 +5,10 @@ import getGames from "../games/index.ts";
 import { response, serverFault } from "../lib/responses.ts";
 import { env } from "cloudflare:workers";
 
+const sql = InitDb(env.osadle);
+
 export function routes(app: RouterType) {
     app.get("/api/today/", async (_request) => {
-        const sql = InitDb(env.osadle);
         const games = await getGames();
 
         const last = await sql.history.last();
@@ -26,6 +27,20 @@ export function routes(app: RouterType) {
                     }),
                 };
             }),
+        });
+    });
+
+    app.get("/api/games/", async (_request) => {
+        const games = await getGames();
+
+        return response(games);
+    });
+
+    app.get("/api/archive/", async (_request) => {
+        const archive = await sql.history.archive();
+
+        return response({
+            archive: archive,
         });
     });
 }

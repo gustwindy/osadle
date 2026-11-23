@@ -24,6 +24,8 @@ export default function Landing() {
                                 More gamemodes soon...
                             </span>
                             <br></br>
+                            <a href="#archive">Daily Archive</a>
+                            <br />
                             <a href="#credits">Credits</a>
                         </div>
                     </div>
