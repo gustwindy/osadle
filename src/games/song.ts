@@ -6,11 +6,11 @@ export default async function SongGame(): Promise<OsadleGameConfig> {
     const songs = await InitDb(env.osadle).songs.list();
 
     const imgBase = new URL(
-        "/storage/v1/object/public/thumbnails/",
+        env.LOCAL_DEV ? "thumbnails/" : "/storage/v1/object/public/thumbnails/",
         env.S3_ENDPOINT,
     );
     const audioBase = new URL(
-        "/storage/v1/object/public/music/",
+        env.LOCAL_DEV ? "music/" : "/storage/v1/object/public/music/",
         env.S3_ENDPOINT,
     );
 
