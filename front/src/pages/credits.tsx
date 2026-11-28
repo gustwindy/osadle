@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { styleForImage } from "../lib/utils";
 import "./credits.css";
 
@@ -48,7 +49,7 @@ export default function Credits() {
                 <span id="osage" />
             </div>
             <div className="content">
-                <a href="/">back?</a>
+                <Link href="/">back?</Link>
                 <span id="logo" />
                 <h2>credits</h2>
                 <div>

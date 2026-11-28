@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import "./landing.css";
 
 export default function Landing() {
@@ -19,12 +20,12 @@ export default function Landing() {
                         <h1 id="pagesTitle">pages</h1>
 
                         <div id="buttons">
-                            <a href="/song">Daily Song</a>
+                            <Link href="/song">Daily Song</Link>
                             <span className="disabled">
                                 More gamemodes soon...
                             </span>
                             <br></br>
-                            <a href="/credits">Credits</a>
+                            <Link href="/credits">Credits</Link>
                         </div>
                     </div>
                     <div id="discordPlug">

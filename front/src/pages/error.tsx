@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import "./error.css";
 
 export default function ErrorPage() {
@@ -16,7 +17,7 @@ export default function ErrorPage() {
                     </span>
                 </p>
                 <br />
-                <a href="/">go home?</a>
+                <Link href="/">go home?</Link>
             </div>
         </main>
     );
