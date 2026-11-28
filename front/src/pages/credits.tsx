@@ -98,7 +98,6 @@ export default function Credits() {
                         ]}
                     />
                 </div>
-                <span className="loadingFish" />
             </div>
         </main>
     );

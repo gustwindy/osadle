@@ -6,6 +6,7 @@ import { useToday } from "./hooks/useToday";
 import Credits from "./pages/credits";
 import ErrorPage from "./pages/error";
 import GuessSong from "./pages/games/song";
+import LoadingFish from "./components/loadingFish";
 
 export default function Main() {
     const today = useToday();
@@ -37,7 +38,7 @@ export default function Main() {
                 {today && todays.song ? (
                     <GuessSong today={today} todaysGame={todays.song} />
                 ) : (
-                    <h1>loading</h1>
+                    <LoadingFish />
                 )}
             </Route>
             <Route path="credits" component={Credits} />

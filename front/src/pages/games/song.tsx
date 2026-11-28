@@ -17,6 +17,7 @@ import { modifySave, useGame } from "../../hooks/useSave";
 import type { OsadleGame, Today } from "../../lib/api";
 import findAudio from "../../lib/audio";
 import { styleForImage } from "../../lib/utils";
+import LoadingFish from "../../components/loadingFish";
 
 const GUESS_INTERVALS = [0.5, 1, 2, 5, 7];
 
@@ -261,7 +262,7 @@ export default function GuessSong({
             ) : null}
         </main>
     ) : (
-        <h1>loading</h1>
+        <LoadingFish />
     );
 }
 function GuessCard({
