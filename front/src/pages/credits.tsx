@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { styleForImage } from "../lib/utils";
 import "./credits.css";
 
@@ -43,12 +44,12 @@ function PersonCard({
 
 export default function Credits() {
     return (
-        <>
+        <main id="credits">
             <div className="bg">
                 <span id="osage" />
             </div>
             <div className="content">
-                <a href="#home">back?</a>
+                <Link href="/">back?</Link>
                 <span id="logo" />
                 <h2>credits</h2>
                 <div>
@@ -99,6 +100,6 @@ export default function Credits() {
                 </div>
                 <span className="loadingFish" />
             </div>
-        </>
+        </main>
     );
 }

@@ -1,15 +1,13 @@
 import Landing from "./pages/landing";
 import "./global.css";
 import { useEffect, useState } from "react";
-
-import useHash from "./hooks/useHash";
+import { Route, Switch } from "wouter";
 import { useToday } from "./hooks/useToday";
 import Credits from "./pages/credits";
 import ErrorPage from "./pages/error";
 import GuessSong from "./pages/games/song";
 
 export default function Main() {
-    const hash = useHash();
     const today = useToday();
     const [isMobile, setMobile] = useState(
         document.body.clientWidth < document.body.clientHeight,
@@ -32,35 +30,18 @@ export default function Main() {
         song: todayFor("song"),
     };
 
-    const map = [
-        { name: "home", hashes: ["", "#home"], element: <Landing /> },
-        { name: "credits", hashes: ["#credits"], element: <Credits /> },
-        {
-            name: "song",
-            hashes: ["#song"],
-            element: (
-                <>
-                    {today && todays.song ? (
-                        <GuessSong
-                            key={hash}
-                            today={today}
-                            todaysGame={todays.song}
-                        />
-                    ) : (
-                        <h1>loading</h1>
-                    )}
-                </>
-            ),
-        },
-    ];
-    const page = map.find((a) => a.hashes.includes(hash));
-    const shown = page ?? {
-        name: "error",
-        hashes: [],
-        element: <ErrorPage />,
-    };
-
-    document.body.id = shown.name;
-
-    return <>{shown.element}</>;
+    return (
+        <Switch>
+            <Route path="/" component={Landing} />
+            <Route path="song">
+                {today && todays.song ? (
+                    <GuessSong today={today} todaysGame={todays.song} />
+                ) : (
+                    <h1>loading</h1>
+                )}
+            </Route>
+            <Route path="credits" component={Credits} />
+            <Route component={ErrorPage} />
+        </Switch>
+    );
 }

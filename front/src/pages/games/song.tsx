@@ -160,7 +160,7 @@ export default function GuessSong({
     }, [gameData, songs]);
 
     return songs ? (
-        <>
+        <main id="song">
             <div className="bg">
                 <span id="osageLeft" />
                 <span id="osageRight" />
@@ -259,7 +259,7 @@ export default function GuessSong({
                     }}
                 ></Results>
             ) : null}
-        </>
+        </main>
     ) : (
         <h1>loading</h1>
     );
