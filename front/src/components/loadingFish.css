@@ -15,4 +15,11 @@
     background-image: url("/images/fish/1.png");
     background-size: cover;
     background-repeat: no-repeat;
+    height: 17.375vw;
+    width: 25vw;
+}
+
+#root.mobileUi .loading-fish {
+    height: 34.75vw;
+    width: 50vw;
 }
