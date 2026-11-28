@@ -3,8 +3,8 @@
     "main": "src/index.ts",
     "compatibility_date": "2026-11-13",
     "build": {
-        "watch_dir": ["public", "src"],
-	},
+        "watch_dir": ["public", "src"]
+    },
     "observability": {
         "enabled": true
     },
@@ -14,7 +14,8 @@
     "assets": {
         "directory": "./public",
         "binding": "public",
-        "run_worker_first": true
+        "run_worker_first": true,
+        "not_found_handling": "single-page-application"
     },
     "d1_databases": [
         {

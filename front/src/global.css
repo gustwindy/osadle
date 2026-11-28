@@ -9,7 +9,7 @@
 
 html,
 body,
-#root {
+main {
     overflow: hidden;
     height: 100%;
 }
@@ -58,13 +58,17 @@ h1 {
 }
 
 body,
-#root,
+main,
 .bg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
+}
+
+#root {
+    display: contents;
 }
 
 .bg {

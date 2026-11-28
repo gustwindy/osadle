@@ -1,5 +1,6 @@
 import type { JSX } from "react/jsx-runtime";
 import "./results.css";
+import { Link } from "wouter";
 
 export function Results({
     title,
@@ -62,7 +63,7 @@ export function Results({
                             keep playing?
                         </button>
                     ) : null}
-                    <a href="#home">other modes</a>
+                    <Link href="/">other modes</Link>
                 </div>
             </div>
         </div>
